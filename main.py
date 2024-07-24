@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
@@ -7,7 +6,11 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 
 def main():
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyCcmGahyEk9YKdW1OTQqr6HveyelmjWUGM"
+
+    headers={
+        "authorization": st.secrets["gemini_api_key"],
+        "content-type": "application/json"
+    }
 
     st.set_page_config(page_title="Ask your PDF")
     st.header("Ask your PDF 🗨️")
