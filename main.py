@@ -8,7 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 def main():
 
     headers={
-        "authorization": st.secrets["gemini_api_key"],
+        "authorization": st.secrets["api_key"],
         "content-type": "application/json"
     }
 
