@@ -1,4 +1,4 @@
-# Chat with Your PDF Using Generative AI (Langchain-RAG) and Vector DB (Chroma)
+# Chat with Your PDF Using Generative AI (Langchain-RAG) and Vector DB (Chroma): **[Project Link](https://chat-with-your-pdf-n8b9z5dxrg7qfyjrawabbq.streamlit.app/)**
 
 This project demonstrates a question-answering system built with Langchain libraries. The system leverages a pre-trained Generative AI model (Gemini-1.5-flash) and Chroma for document retrieval and response generation.
 
