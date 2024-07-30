@@ -12,8 +12,6 @@ def main():
         "authorization": st.secrets["api_key"],
         "content-type": "application/json"
     }
-
-    # os.environ["GOOGLE_API_KEY"]="AIzaSyBhYLxP0ipAJj74K2ZB2r1IigL_VevM_v8---hhhh"
     
     st.set_page_config(page_title="Ask your PDF")
     st.header("Ask your PDF 🗨️")
