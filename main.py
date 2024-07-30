@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
@@ -12,6 +13,8 @@ def main():
         "content-type": "application/json"
     }
 
+    os.environ["GOOGLE_API_KEY"]="AIzaSyBhYLxP0ipAJj74K2ZB2r1IigL_VevM_v8"
+    
     st.set_page_config(page_title="Ask your PDF")
     st.header("Ask your PDF 🗨️")
     st.text("Please be with patience until the uploaded PDF loads 😊")
