@@ -8,10 +8,10 @@ from langchain_core.prompts import ChatPromptTemplate
 
 def main():
 
-    # headers={
-    #     "authorization": st.secrets["api_key"],
-    #     "content-type": "application/json"
-    # }
+    headers={
+        "authorization": st.secrets["api_key"],
+        "content-type": "application/json"
+    }
     
     st.set_page_config(page_title="Ask your PDF")
     st.header("Ask your PDF 🗨️")
