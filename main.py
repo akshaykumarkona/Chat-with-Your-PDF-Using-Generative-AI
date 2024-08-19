@@ -9,7 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate
 def main():
 
     # headers={
-    #     "authorization": st.secrets["gemini_api_key"],
+    #     "authorization": st.secrets["api_key"],
     #     "content-type": "application/json"
     # }
     
@@ -45,7 +45,7 @@ def main():
             gemini_llm = ChatGoogleGenerativeAI(
                 model="gemini-1.5-flash",
                 max_output_tokens=350,
-                temperature=0,google_api_key="AIzaSyCcmGahyEk9YKdW1OTQqr6HveyelmjWUGM",
+                temperature=0
             )
             
 
