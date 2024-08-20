@@ -8,10 +8,10 @@ from langchain_core.prompts import ChatPromptTemplate
 
 def main():
 
-    # headers={
-    #     "authorization": st.secrets["api_key"],
-    #     "content-type": "application/json"
-    # }
+    headers={
+        "authorization": st.secrets["api_key"],
+        "content-type": "application/json"
+    }
     os.environ["GOOGLE_API_KEY"]=st.secrets["api_key"]
     
     st.set_page_config(page_title="Ask your PDF")
@@ -49,23 +49,6 @@ def main():
                 temperature=0
             )
             
-
-
-            # prompt_template = PromptTemplate.from_template(
-            #     "You are an assistant that helps with questions about PDFs. "
-            #     "Don't try to make up the answer. "
-            #     "Just answer to the point and in short (don't give long answers). "
-            #     "Question: {question}"
-            # )
-            
-            # prompt_template = ChatPromptTemplate.from_template(
-            #     [{"role": "system", "content": '''You are an assistant that helps with questions about PDFs. 
-            # Don't try to make up the answer.
-            # Just answer to the point and in short (don't give long answers)'''},
-            #      {"role": "user", "content": "{question}"}]
-            # )
-      
-
             # Designing the ChatPrompt Template
             chat_prompt = ChatPromptTemplate.from_template("""
             Answer the following question based only on the provided context.
@@ -76,23 +59,19 @@ def main():
             {context}
             </context>
             Question: {input}""")
-
             
             from langchain.chains.combine_documents import create_stuff_documents_chain
+            from langchain.chains import create_retrieval_chain
 
             combined_chain=create_stuff_documents_chain(gemini_llm, chat_prompt)
 
             retriever=db.as_retriever()
-
-            from langchain.chains import create_retrieval_chain
 
             retriver_chain=create_retrieval_chain(retriever,combined_chain)
 
             response_from_RAG=retriver_chain.invoke({"input":user_question})
 
             st.write(response_from_RAG['answer'])
-            # print(response_from_RAG)
-
 
 if __name__ == '__main__':
     main()
