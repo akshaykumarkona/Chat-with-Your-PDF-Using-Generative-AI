@@ -44,9 +44,9 @@ def main():
 
         if user_question:            
             gemini_llm = ChatGoogleGenerativeAI(
-                model="gemini-1.5-flash",
-                max_output_tokens=350,
-                temperature=0
+                model="gemini-2.0-flash",
+                max_output_tokens=450,
+                temperature=0.3
             )
             
             # Designing the ChatPrompt Template
@@ -54,7 +54,6 @@ def main():
             Answer the following question based only on the provided context.
             Never try to make up the answer.
             Think step by step before providing a detailed answer. 
-            I will tip you $1000 if the user finds the answer helpful. 
             <context>
             {context}
             </context>
