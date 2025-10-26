@@ -37,7 +37,8 @@ def main():
         )
         chunks = text_splitter.split_documents(docs)
         
-        g_embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        # g_embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        g_embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
         db = Chroma.from_documents(documents=chunks, embedding=g_embeddings)
         
         user_question = st.text_input("Ask a question about your PDF:")
@@ -74,3 +75,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
