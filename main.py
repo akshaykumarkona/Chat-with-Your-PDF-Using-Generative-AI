@@ -67,7 +67,7 @@ def ask_question(db, question):
             Think step by step before providing a detailed answer. 
             
             <context>
-            {context}
+            {context_text}
             </context>
 
     Question: \n{question}
