@@ -6,3 +6,5 @@ langchain_core
 chromadb==0.3.29
 streamlit
 pypdf
+langchain-huggingface
+pymupdf
