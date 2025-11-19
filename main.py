@@ -78,7 +78,10 @@ def ask_question(db, question):
 
 
 def main():
-    # pdf_path = r"E:\DesktopFolders\GenAI\Projects\chat-with-your-pdf\sample_ml.pdf"# input("📂 Enter PDF file path: ").strip()
+    st.set_page_config(page_title="Ask your PDF")
+    st.header("Ask your PDF 🗨️")
+    st.text("Please be with patience until the uploaded PDF loads 😊")
+    st.text("Consider uploading PDF files less than 15MB")
     uploaded_pdf = st.file_uploader("Upload a PDF", type=["pdf"])
 
     if uploaded_pdf:
@@ -195,6 +198,7 @@ if __name__ == "__main__":
 
 # if __name__ == '__main__':
 #     main()
+
 
 
 
