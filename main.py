@@ -25,7 +25,7 @@ def build_vector_db(docs):
     print("Splitting PDF into chunks...")
 
     splitter = RecursiveCharacterTextSplitter(
-        separator="\n",
+        # separator="\n",
         chunk_size=1500,
         chunk_overlap=300,
         length_function=len
@@ -195,6 +195,7 @@ if __name__ == "__main__":
 
 # if __name__ == '__main__':
 #     main()
+
 
 
 
