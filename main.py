@@ -65,10 +65,10 @@ def ask_question(db, question):
             Answer the following question based only on the provided context.
             Never try to make up the answer.
             Think step by step before providing a detailed answer. 
-
-    --- CONTEXT START ---
-    {context_text}
-    --- CONTEXT END ---
+            
+            <context>
+            {context}
+            </context>
 
     Question: \n{question}
     """
@@ -195,6 +195,7 @@ if __name__ == "__main__":
 
 # if __name__ == '__main__':
 #     main()
+
 
 
 
