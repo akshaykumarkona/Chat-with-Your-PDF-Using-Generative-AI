@@ -6,7 +6,7 @@ from langchain_community.vectorstores import Chroma
 import streamlit as st
 from langchain_huggingface import HuggingFaceEmbeddings
 
-    headers={
+headers={
         "authorization": st.secrets["api_key"],
         "content-type": "application/json"
     }
@@ -194,5 +194,6 @@ if __name__ == "__main__":
 
 # if __name__ == '__main__':
 #     main()
+
 
 
