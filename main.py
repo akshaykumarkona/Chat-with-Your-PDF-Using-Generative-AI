@@ -10,7 +10,7 @@ headers={
         "authorization": st.secrets["api_key"],
         "content-type": "application/json"
     }
-    os.environ["GOOGLE_API_KEY"]=st.secrets["api_key"]
+os.environ["GOOGLE_API_KEY"]=st.secrets["api_key"]
 
 # os.environ["GOOGLE_API_KEY"] = "AIzaSyBMSTBqYv74VqltxMj7G8eUtbuQg8tUROg"
 
@@ -62,8 +62,9 @@ def ask_question(db, question):
     )
 
     prompt = f"""
-    You MUST answer ONLY using the context below.
-    If the context does not contain the answer, say "I cannot find that in the PDF."
+            Answer the following question based only on the provided context.
+            Never try to make up the answer.
+            Think step by step before providing a detailed answer. 
 
     --- CONTEXT START ---
     {context_text}
@@ -194,6 +195,7 @@ if __name__ == "__main__":
 
 # if __name__ == '__main__':
 #     main()
+
 
 
 
